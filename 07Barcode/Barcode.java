@@ -20,11 +20,12 @@ public class Barcode implements Comparable<Barcode> {
 	for(int x = 0; x < zipcode.length(); x++){
 	    barcode = barcode + " " + code[Integer.parseInt(zipcode.substring(x, x+1))];
 	}
-	barcode = barcode + " |"
+	barcode = barcode + " |";
+	return barcode;
     }
 
     public String toString(){
-	return barcode + " (" + zipcode + ")";
+	return getCode() + " (" + getZip() + ")";
     }
 
     public int compareTo(Barcode other){
@@ -36,7 +37,7 @@ public class Barcode implements Comparable<Barcode> {
     }
 
     private void zipToCode(){
-	code = new int[10];
+	code = new String[10];
 	code[0] = "||:::";
 	code[1] = ":::||";
 	code[2] = "::|:|";
