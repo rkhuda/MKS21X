@@ -1,3 +1,5 @@
+import java.util.Iterator;
+
 public class SuperArray implements Iterable<String>{
     
     private String[] data;
@@ -155,7 +157,7 @@ public class SuperArray implements Iterable<String>{
     }
 
     public Iterator<String> iterator(){
-	return new SuperArrayIterator(0, size() - 1);
+	return new SuperArrayIterator(data, 0, size() - 1);
     }
 	
 }
