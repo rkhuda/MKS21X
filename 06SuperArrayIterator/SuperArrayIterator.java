@@ -1,8 +1,10 @@
+import java.util.Iterator;
+
 public class SuperArrayIterator implements Iterator<String>{
 
-    private int current;
-    private int end;
-    private String[] data;
+    int current;
+    int end;
+    String[] data;
 
     public SuperArrayIterator(String[] superarray, int start, int stop){
 	data = superarray;
@@ -18,13 +20,13 @@ public class SuperArrayIterator implements Iterator<String>{
 	return current <= end;
     }
 
-    public int next(){
+    public String next(){
 	if (hasNext()){
 	    current++;
 	}
 	else {
 	    System.exit(0);
 	}
-	return data.get(current - 1);
+	return data[current - 1];
     }
 }
