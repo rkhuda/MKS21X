@@ -1,11 +1,11 @@
-import java.util.Iterator;
-
 public class SuperArrayIterator implements Iterator<String>{
 
     private int current;
     private int end;
+    private String[] data;
 
-    public SuperArrayIterator(int start, int stop){
+    public SuperArrayIterator(String[] superarray, int start, int stop){
+	data = superarray;
 	current = start;
 	end = stop;
     }
