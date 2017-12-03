@@ -45,10 +45,10 @@ public class SuperArray implements Iterable<String>{
 
     public String toString(){
 	String ans = "[";
-	for (int x = 0; x < data.length - 1; x++){
+	for (int x = 0; x < size() - 1; x++){
 	    ans = ans + data[x] + ", ";
 	}
-	ans = ans + data[data.length - 1] + "]";
+	ans = ans + data[size() - 1] + "]";
 	return ans;
     }
 
