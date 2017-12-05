@@ -98,7 +98,7 @@ public class Barcode implements Comparable<Barcode> {
 	    
 	    int x = 1;
 	    int y = 0;
-	    while (x < code.length() - 5) {
+	    while (x < code.length() - 5 && y < 10) {
 		if (code.substring(x, x + 5).equals(barcode[y])){
 		    zip = zip + y;
 		    checksum = checksum + y;
@@ -115,7 +115,9 @@ public class Barcode implements Comparable<Barcode> {
 		    throw new IllegalArgumentException();
 		}
 	    }
-	    checksum = (checksum - Integer.parseInt(zip.substring(5, 6))) % 10;
+	    if (zip.length() > 0){
+		checksum = (checksum - Integer.parseInt(zip.substring(zip.length() - 1, zip.length()))) % 10;
+	    }
 	    if (!code.substring(26, 31).equals(barcode[checksum])){
 	    	throw new IllegalArgumentException();
 	    }
