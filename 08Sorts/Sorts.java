@@ -6,6 +6,15 @@ public class Sorts{
 	return "10,Khuda,Raisa";
     }
 
+    public static boolean isSorted(int[] ary){
+	for (int x = 0; x < ary.length - 1; x++){
+	    if (ary[x] > ary[x+1]){
+		return false;
+	    }
+	}
+	return true;
+    }
+
     public static void selectionSort(int[] data){
 	int index = 0;
 	for (int x = 0; x < data.length; x++){
@@ -35,6 +44,25 @@ public class Sorts{
 			data[y-1] = data[y];
 			data[y] = min;
 		    }
+		}
+	    }
+	}
+    }
+
+    public static void bubbleSort(int[] data){
+	while (!isSorted(data)){
+	    int x = 1;
+	    int last = data.length - 1;
+	    while (x < data.length){
+		int temp = data[x-1];
+		if (data[x] < data[x-1]){
+		    data[x-1] = data[x];
+		    data[x] = temp;
+		}
+		x++;
+		if (x == last + 1){
+		    x = 1;
+		    last--;
 		}
 	    }
 	}
