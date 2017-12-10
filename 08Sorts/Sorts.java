@@ -3,24 +3,8 @@ import java.util.Arrays;
 public class Sorts{
 
     public static String name(){
-	return "01.Khuda.Raisa";
+	return "10,Khuda,Raisa";
     }
-    /*
-    public static boolean isSorted(int[] ary){
-	for (int x = 0; x < ary.length - 1; x++){
-	    if (ary[x] > ary[x+1]){
-		return false;
-	    }
-	}
-	return true;
-    }
-
-    private static void swap(int[] ary, int a, int b){
-	int c = ary[a];
-	ary[a] = ary[b];
-	ary[b] = c;
-    }
-    */
 
     public static void selectionSort(int[] data){
 	int index = 0;
@@ -38,18 +22,35 @@ public class Sorts{
 	    }
 	}
     }
+
+    public static void insertionSort(int[] data){
+	for (int x = 1; x < data.length; x++){
+	    int temp = data[x - 1];
+	    if (data[x] < data[x-1]){
+		data[x-1] = data[x];
+		data[x] = temp;
+		for (int y = x; y > 0; y--){
+		    int min = data[y-1];
+		    if (data[y] < data[y-1]){
+			data[y-1] = data[y];
+			data[y] = min;
+		    }
+		}
+	    }
+	}
+    }
     
-    /*
+    
     public static void main(String[]artie){     
         int[] randish = new int[15];
         for(int i = 0 ; i < randish.length; i++){     
             randish[i] =(int)(Math.random()*100);      
         }
-	System.out.println(isSorted(randish));
+	//System.out.println(isSorted(randish));
 	System.out.println(Arrays.toString(randish));
-	selectionSort(randish);
+	insertionSort(randish);
 	System.out.println(Arrays.toString(randish));
     }    
-    */
+    
          
 }
