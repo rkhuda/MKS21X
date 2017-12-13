@@ -2,12 +2,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class ConvertTemp extends JFrame {
+public class ConvertTemp extends JFrame implements ActionListener{
     private Container pane;
 
-    private JButton b;
+    private JButton b, b2;
     private JTextField t;
-    private JCheckbox c;
 
     public ConvertTemp() {
 	this.setTitle("Temperature Converson");
@@ -28,7 +27,7 @@ public class ConvertTemp extends JFrame {
     }
 
     public static void main(String[] args){
-	ConvertTemp g = new ConverTemp();
+	ConvertTemp g = new ConvertTemp();
 	g.setVisible(true);
     }
 
@@ -43,10 +42,10 @@ public class ConvertTemp extends JFrame {
     public void actionPerformed(ActionEvent e){
 	String s = e.getActionCommand();
 	if (s.equals("Farenheit")){
-		System.out.println("" + celsiusToFarenheit(Integer.parseInt(t.getText())));
+		System.out.println("" + celsiusToFarenheit(Double.parseDouble(t.getText())));
 	}
 	if (s.equals("Celsius")){
-	    System.out.println("" + farenheitToCelsius(Integer.parseInt(t.getText())));
+	    System.out.println("" + farenheitToCelsius(Double.parseDouble(t.getText())));
 	}   
     }
 }
