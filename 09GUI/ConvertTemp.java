@@ -41,11 +41,12 @@ public class ConvertTemp extends JFrame implements ActionListener{
 
     public void actionPerformed(ActionEvent e){
 	String s = e.getActionCommand();
+	System.out.println(s);
 	if (s.equals("Farenheit")){
-		System.out.println("" + celsiusToFarenheit(Double.parseDouble(t.getText())));
+	    t.setText("" + celsiusToFarenheit(Double.parseDouble(t.getText())));
 	}
 	if (s.equals("Celsius")){
-	    System.out.println("" + farenheitToCelsius(Double.parseDouble(t.getText())));
+	    t.setText("" + farenheitToCelsius(Double.parseDouble(t.getText())));
 	}   
     }
 }
