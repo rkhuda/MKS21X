@@ -9,9 +9,9 @@ public class OrderedSuperArray extends SuperArray{
     }
 
     public OrderedSuperArray(String[] ary){
-	super();
+	super(ary.length);
 	for (int x = 0; x < ary.length; x++){
-	    super.add(ary[x]);
+	    add(ary[x]);
 	}
     }
 
